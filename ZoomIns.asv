@@ -1,0 +1,28 @@
+function hasil = ZoomIns( a,v )
+
+    for x = 1:3
+        m=v; 
+        n=v; 
+        g=1;
+        h=1;
+        y=1;
+        z=1;
+        c=length(a(1,:,1));
+        d=length(a(:,1,1));
+        for i=1:d
+            for j=1:c 
+                for y=m:-1:g
+                    for z=n:-1:h
+                        hasil(y,z,x) = a(i,j,x);    
+                    end
+                end 
+                h=n+1;
+                n=n+2
+            end
+            g=m
+            m=m+2
+        end
+    end
+
+end
+
